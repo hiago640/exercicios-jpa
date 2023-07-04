@@ -8,7 +8,7 @@ import javax.persistence.Persistence;
 
 import modelo.basico.Entidade;
 
-public class DAO<E extends Entidade> {
+public class DAO<E> {
 	
 	private static EntityManagerFactory emf;
 	private EntityManager em;
