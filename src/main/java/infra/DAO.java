@@ -61,6 +61,10 @@ public class DAO<E> {
 				.setMaxResults(offSet).getResultList();
 	}
 	
+	public E findById(Object id){
+		return em.find(classe, id);
+	}
+	
 	public void close() {
 		em.close();
 	}

@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import modelo.basico.Entidade;
@@ -16,6 +17,11 @@ public class Assento implements Entidade {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
+	
+	//mappedBy = Qual o atributo que foi mapeado a relação? utilizado para relacoes bidirecionais
+	//nesse caso foi o atributo assento dentro da classe Cliente
+	@OneToOne(mappedBy = "assento")
+	private Cliente cliente;
 
 	public Assento() {
 
@@ -41,4 +47,12 @@ public class Assento implements Entidade {
 		this.nome = nome;
 	}
 
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+	
 }

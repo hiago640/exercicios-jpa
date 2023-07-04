@@ -20,6 +20,7 @@ public class Cliente implements Entidade {
 	private Long id;
 	private String nome;
 
+	//após definicao do oneToOne em cascata, eu posso persistir o Cliente e ele persista o Assento
 	@OneToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(unique = true)
 	private Assento assento;
